@@ -52,26 +52,13 @@ export default function AccordionIntroduction() {
             </h1>
           </AccordionTrigger>
           <AccordionContent className="text-xl px-4">
-            I'm Devinger, a front-end developer, programmer, and photographer. By day, I work at a company where I primarily build websites using WordPress, helping businesses establish their online presence. By night (and weekends), I dive into photography, capturing stunning product and fashion photos that bring websites to life.
+            I&apos;m Devinger, a front-end developer, programmer, and photographer. By day, I work at a company where I primarily build websites using WordPress, helping businesses establish their online presence. By night (and weekends), I dive into photography, capturing stunning product and fashion photos that bring websites to life.
 
 
 
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="item-2" className="">
-          <AccordionTrigger>
-            <h1 className="relative hover:left-2 hover:top-2 px-4  text-4xl md:text-8xl lg:text-9xl font-bold py-2  md:text-left">
-              About me
-            </h1>
-          </AccordionTrigger>
-          <AccordionContent className="text-xl px-4">
-            I'm Devinger, a front-end developer, programmer, and photographer. By day, I work at a company where I primarily build websites using WordPress, helping businesses establish their online presence. By night (and weekends), I dive into photography, capturing stunning product and fashion photos that bring websites to life.
-
-
-
-          </AccordionContent>
-        </AccordionItem>
         {/* <AccordionItem value="item-2"> */}
         {/*   <AccordionTrigger>Is it styled?</AccordionTrigger> */}
         {/*   <AccordionContent> */}
