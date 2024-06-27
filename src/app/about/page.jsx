@@ -7,7 +7,8 @@ export default function AboutPage() {
     <main className="min-h-screen relative">
       <div className="  fixed inset-0 bg-accent  mx-auto h-48 ">
 
-        <h1 className="  text-4xl md:text-8xl lg:text-9xl font-bold py-2 my-20 mx-4 md:text-left">
+        <h1 className="  text-[white] shadow-lg:w
+          text-4xl md:text-8xl lg:text-9xl font-bold py-2 my-20 mx-4 md:text-left">
           About me
         </h1>
       </div>
@@ -124,10 +125,6 @@ export default function AboutPage() {
           <h2> About me</h2>
           <article>
             I&apos;m Devinger, a front-end developer, programmer, and photographer. By day, I work at a company where I primarily build websites using WordPress, helping businesses establish their online presence. By night (and weekends), I dive into photography, capturing stunning product and fashion photos that bring websites to life.
-          </article>
-          <h2> My Journey</h2>
-          <article>
-            Ever since I wrote my first line of code, I&apos;ve been hooked on the world of web development. I love the challenge of turning ideas into visually appealing and functional websites. Working with WordPress allows me to create sites that are not only beautiful but also easy for clients to manage.
           </article>
           <h2> What I do </h2>
           <ul>

@@ -8,6 +8,8 @@ import Image from 'next/image';
 
 export default function Header() {
 
+
+
   const [isActive, setIsActive] = useState(false);
   const pathname = usePathname();
 

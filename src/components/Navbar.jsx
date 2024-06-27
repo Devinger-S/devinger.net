@@ -201,12 +201,19 @@ export const Desktop = ({ links, hoveredIndex, setHoveredIndex, path }) => {
           </AnimatePresence>
 
           <span
-            className={`relative z-10 ${path === navLink.link
-              ? "text-teal-600"
-              : "text-gray-600 dark:text-gray-50"
-              }`}
+            className={cn(
+              'hello relative z-10',
+              {
+                'text-teal-600': path === navLink.link,
+                'text-gray-600 dark:text-gray-50': path !== navLink.link,
+              }
+            )}
+          // className={`hello relative z-10 ${path === navLink.link
+          //   ? "text-teal-600"
+          //   : "text-gray-600 dark:text-gray-50"
+          //   }`}
           >
-            {navLink.name}
+            {/* {navLink.name} */}
           </span>
           {path === navLink.link && (
             <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-blue-500/0 via-blue-500/40 to-blue-500/0 dark:from-blue-400/0 dark:via-blue-400/40 dark:to-blue-400/0"></span>
