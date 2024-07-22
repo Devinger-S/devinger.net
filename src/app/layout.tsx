@@ -7,6 +7,7 @@ import { TailwindIndicator } from "@/components/tailwind-indicator";
 import Footer from "@/components/Footer";
 import { FloatingNav } from "@/components/floating-navbar";
 import { cn } from "@/lib/utils";
+import GrainyBackground from "@/components/grainyBackground/GrainyBackground";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,25 +25,26 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn("overflow-x-hidden flex flex-col min-h-screen relative", inter.className)}
       >
+      <GrainyBackground/>
         <Providers>
           <FloatingNav navItems={[
             { name: "Home", link: "/" },
-            { name: "About", link: "/about" },
-            { name: "Projects", link: "/projects" },
-            { name: "Contact", link: "/contact" },
-
+            { name: "Media", link: "/media" },
+             { name: "Services", link: "/services" }
           ]} />
-          <main id="mainContent"
-            className='flex-grow relative w-full'
+          <main
+            id="mainContent"
+            className='flex-grow   relative w-full'
+
           >
-
-
             {children}
+
           </main>
         </Providers>
         <TailwindIndicator />
         <section id='footerWrapper'
-          className=' w-full'
+          className=' w-full fixed bottom-0 z-50 backdrop-blur-sm'
+
         >
 
           <Footer />

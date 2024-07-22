@@ -4,10 +4,13 @@
 
   @layer base {
     :root {
-      --background: 220 23% 95%;
+      --background:227deg, 44%, 80%;
+    /*   183 74% 35%; */
+    /* hsl(227deg, 44%, 80%) */
+    /* 220 23% 95%; */
       --background2: 183 74% 35%;
-      --foreground: 240 10% 3.9%;
-
+      --foreground:229deg, 20%, 17% ;
+      /* 227deg, 70%, 87%; */
       --card: 0 0% 100%;
       --card-foreground: 240 10% 3.9%;
 

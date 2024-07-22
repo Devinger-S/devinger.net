@@ -1,6 +1,8 @@
 "use client";
 import { usePathname } from 'next/navigation'
 import React, { useState } from "react";
+import { Button } from "./ui/button";
+import {DrawerDialog} from './../components/Drawer'
 import {
   motion,
   AnimatePresence,
@@ -88,6 +90,11 @@ export const FloatingNav = ({
               >{navItem.name}</span>
             </Link>
           ))}
+          {/* <Button > */}
+            <DrawerDialog>
+              <Button >Contact</Button>
+            </DrawerDialog>
+          {/* </Button> */}
           <span><ThemeToggle /></span>
         </motion.div>
         <motion.div className="sm:hidden">

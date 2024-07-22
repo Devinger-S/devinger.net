@@ -32,8 +32,9 @@ const userData = {
   ],
 
   about: {
-    title:
-      "I'm a software developer that loves building products and web applications that impact millions of lives",
+    title:"",
+      // "I'm a software developer that loves building products and web applications that impact millions of lives",
+    //
     description: {},
   },
 

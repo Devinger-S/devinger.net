@@ -19,7 +19,6 @@ export default function Header() {
 
   const toggleIsActive = () => {
     setIsActive((prevState) => !prevState);
-    console.log(isActive)
   };
 
   return (

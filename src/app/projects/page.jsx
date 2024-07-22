@@ -2,6 +2,7 @@
 import React from "react";
 import userData from "@/data/siteConf";
 import ProjectCard from "@/components/ProjectCard";
+import tracker from "/public/tracker.json"
 
 export default function Projects() {
   return (
@@ -22,6 +23,7 @@ export default function Projects() {
             description={proj.description}
             href={proj.href}
             tags={proj.tags}
+             icon={tracker} 
           />
         ))}
       </div>

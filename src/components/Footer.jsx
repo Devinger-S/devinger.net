@@ -8,17 +8,17 @@ export default function Footer() {
         {/* px-4 py-10 md:py-20 */}
 
         <div className="h-0.5 w-full bg-white dark:bg-gray-700"></div>
-        <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row  justify-between md:items-center my-4">
-          <div>
+        <div className="flex flex-col md:space-y-4 md:space-y-0 md:flex-row  justify-between md:items-center my-4">
+          <div className="hidden md:block">
             <p>&copy; Devinger All Rights Reserved.</p>
           </div>
           <div>
             {/* Support me by keeping this in the footer, please. :) */}
-            <div>
+            <div className="hidden md:inline-block"  >
               Developed by
-              <div className="inline-block transform hover:scale-110 hover:-rotate-3 transition duration-300">
+              <div className="hidden md:inline-block transform hover:scale-110 hover:-rotate-3 transition duration-300">
                 <a
-                  className="hover:bg-red-500 rounded-md px-2 py-1  hover:text-gray-50"
+                  className="hover:bg-red-500 rounded-md md:px-2 md:py-1  hover:text-gray-50"
                   href="https://devinger.net"
                 >
                   Devinger

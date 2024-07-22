@@ -1,0 +1,112 @@
+
+
+.blob_1{
+content:'';
+width: 880px;
+height: 850px;
+left: 800px;
+top: 50px;
+position: absolute;
+border-radius:8vw;
+
+background: linear-gradient(120deg, #000A6B 0%, #000A6B 35%, #E8E6FF 100%);
+mix-blend-mode: lighten;
+filter: blur(150px);
+transform: translate(180px, 50%);
+}
+
+.blob_2{
+  content:'';
+  height:200px;
+  width:200px;
+  position:absolute;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, #000A6B 0%, #000A6B 35%, #000A6B 100%);
+  border-radius:100vw;
+  filter:blur(80px);
+  z-index:-15;
+  transform: translate(180px, 50%);
+}
+
+.blob_3{
+  content:'';
+  height:100px;
+  width:500px;
+  position:absolute;
+  background: rgb(2,10,36);
+  mix-blend-mode: lighten;
+  background: linear-gradient(90deg, #000A6B 0%, #000A6B 35%, #000A6B 100%);
+  border-radius:100vw;
+  filter:blur(80px);
+  z-index:-15;
+  transform: translate(50px, 50px);
+}
+.anim_blobs {
+  position:absolute;
+  overflow:hidden;
+  height: 100%;
+  width: 100%;
+  z-index:-15;
+}
+
+
+.noise_bg{
+
+  position:absolute;
+  background: url('https://thumbs.dreamstime.com/b/white-noise-background-effect-sound-effect-grain-distress-overlay-texture-your-design-grainy-gradient-background-145456887.jpg');
+  background-position:center;
+  background-size:500px auto;
+  mix-blend-mode: screen;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index:-15;
+  opacity:0.15;
+}
+
+/*-------Animations-------*/
+
+.blob_1, .blob_2, .blob_3 {
+    animation: rotation 6s infinite;
+    animation: translate1 6s infinite;
+    animation: scale1 6s infinite;
+    animation-direction: alternate;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(90deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes translate1 {
+    from {
+        transform: translate(0);
+    }
+    to {
+        transform: translate(200, 200);
+    }
+}
+
+@keyframes scale1 {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(2);
+    }
+}
+
+.no-visible-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.no-visible-scrollbar::-webkit-scrollbar {
+  display: none;
+}

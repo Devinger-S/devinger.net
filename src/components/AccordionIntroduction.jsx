@@ -8,7 +8,7 @@ import {
 export default function AccordionIntroduction() {
   return (
     <>
-      <Accordion type="multiple" collapsible defaultValue={['item-1']} className="w-full">
+      <Accordion type="multiple" collapsible="true" defaultValue={['item-1']} className="w-full">
 
         {/* <AccordionItem value="item-1" > */}
         {/*   <AccordionTrigger> */}
@@ -25,8 +25,8 @@ export default function AccordionIntroduction() {
         {/* </AccordionItem> */}
         <AccordionItem value="item-1" className="">
           <AccordionTrigger>
-            <h1 className="relative hover:left-2 hover:top-2 px-4  text-4xl md:text-8xl lg:text-9xl font-bold py-2  md:text-left">
-              What I do
+            <h1 className="relative text-white px-4  text-4xl md:text-8xl lg:text-9xl font-bold py-2  md:text-left">
+              Services
             </h1>
           </AccordionTrigger>
           <AccordionContent className="text-xl px-4">
@@ -36,7 +36,18 @@ export default function AccordionIntroduction() {
               <li> <span className="font-bold">Programmer:  </span><br />I bring functionality to your website, ensuring it runs smoothly and efficiently. From custom features to troubleshooting, I handle the technical details so you don’t have to.</li><br />
 
               <li> <span className="font-bold">Photo/Video  </span><br />Great websites need great visuals. I take professional  photos and videos to ensure your site looks polished and professional.
-                Check out my work <a href="/photo-video" className="underline text-blue-500 font-bold">here</a><br />
+                Check out my work
+
+              <div className="inline-block transform hover:scale-110 hover:-rotate-3 transition duration-300">
+                <a
+                  className="underline hover:bg-red-500 font-bold rounded-md px-2 py-1  hover:text-gray-50"
+                  href="https://devinger.net/media"
+                >
+                  here.
+                </a>
+              </div>
+                <br/>
+                {/* <a href="/media" className="underline text-blue-500 font-bold">here</a><br /> */}
 
                 Need a bespoke shot? Let&apos;s make it happen.</li><br />
             </ul>
