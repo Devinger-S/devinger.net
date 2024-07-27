@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 import Link from "next/link";
 import { useTheme } from "next-themes";

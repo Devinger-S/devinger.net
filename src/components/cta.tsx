@@ -14,10 +14,10 @@ import Link from "next/link"
  
 // const CallToAction = () => {
   return (
-    <div id='cta' className="flex flex-col py-4  gap-2 md:flex-row md:gap-8">
+    <div id='cta' className="flex items-center flex-col py-4  gap-2 md:flex-row md:gap-8">
 
       <Link 
-         className={cn('font-bold  text-center text-lg p-4', 
+         className={cn('font-bold  text-center w-fit text-lg p-4', 
          // buttonVariants({ size: 'xl' })
          )
       } href='/projects' >Our work</Link>

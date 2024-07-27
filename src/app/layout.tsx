@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
-import Footer from "@/components/Footer";
+import NavBar from "./../components/Navbar.jsx";
 import { FloatingNav } from "@/components/floating-navbar";
 import { cn } from "@/lib/utils";
 import GrainyBackground from "@/components/grainyBackground/GrainyBackground";
@@ -42,14 +42,6 @@ export default function RootLayout({
           </main>
         </Providers>
         <TailwindIndicator />
-        <section id='footerWrapper'
-          className=' w-full fixed bottom-0 z-50 backdrop-blur-sm'
-
-        >
-
-          <Footer />
-
-        </section>
       </body>
     </html >
   );

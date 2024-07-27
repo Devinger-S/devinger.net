@@ -1,17 +1,11 @@
 
 "use client";
-import Image from "next/image";
-import LottieAnimationWrapper from "@/components/LottieAnimationWrapper"; 
+import LottieAnimationWrapper from "@/components/LottieAnimationWrapper";
 import React, { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Hero from "./../components/Hero";
-import ProjectCard from "../components/ProjectCard";
-import userData from "@/data/siteConf";
-import AboutMe from "@/components/AboutMe";
-import Services from "@/components/Services";
-import ContactForm from "@/components/ContactForm";
 import ImageWrapper from "@/components/ImageWrapper";
 import development from './../../public/development.json'
 import pictureUpload from './../../public/pictureUpload.json'
@@ -20,38 +14,38 @@ import support from './../../public/support.json'
 
 
 export default function Home() {
-const content = [
-  {
-    title: "What do I do?",
-    description:
-      "I help businesses and creatives overcome digital invisibility so they can achieve a captivating online presence by crafting stunning websites and visuals. Because there's power in being seen.",
-    content: <ImageWrapper/>
-  },
-  {
-    title: "Building Your Online Space",
-    description:
-      "I create websites with a personal touch, using technologies like Next.js for dynamic web apps or WordPress for flexible solutions. Whether you need a sleek site or a fully custom experience, I’m here to bring your vision to life.",
-    content:  
-          <LottieAnimationWrapper source={development} />
-  },
-  {
-    title: "Adding professional photos & videos",
-    description:
-      "I bring your brand to life with high-quality photos and videos that make a lasting impression. Whether it’s capturing stunning product shots or creating engaging video content, I ensure every visual element enhances your website and tells your story beautifully.",
-    content: 
-          <LottieAnimationWrapper source={pictureUpload} />
-  },
-  {
-    title: "Ongoing Support & Maintenance",
-    description:
-      "My commitment doesn’t end with the launch. I’m here for you every step of the way, offering ongoing support and maintenance to keep your website running smoothly. From resolving technical issues to making updates as needed, I ensure your online presence remains strong and effective.",
-    content: <LottieAnimationWrapper source={support} />
-  },
-];
+  const content = [
+    {
+      title: "What do I do?",
+      description:
+        "I help businesses and creatives overcome digital invisibility so they can achieve a captivating online presence by crafting stunning websites and visuals. Because there's power in being seen.",
+      content: <ImageWrapper />
+    },
+    {
+      title: "Building Your Online Space",
+      description:
+        "I create websites with a personal touch, using technologies like Next.js for dynamic web apps or WordPress for flexible solutions. Whether you need a sleek site or a fully custom experience, I’m here to bring your vision to life.",
+      content:
+        <LottieAnimationWrapper source={development} />
+    },
+    {
+      title: "Adding professional photos & videos",
+      description:
+        "I bring your brand to life with high-quality photos and videos that make a lasting impression. Whether it’s capturing stunning product shots or creating engaging video content, I ensure every visual element enhances your website and tells your story beautifully.",
+      content:
+        <LottieAnimationWrapper source={pictureUpload} />
+    },
+    {
+      title: "Ongoing Support & Maintenance",
+      description:
+        "My commitment doesn’t end with the launch. I’m here for you every step of the way, offering ongoing support and maintenance to keep your website running smoothly. From resolving technical issues to making updates as needed, I ensure your online presence remains strong and effective.",
+      content: <LottieAnimationWrapper source={support} />
+    },
+  ];
   const [activeCard, setActiveCard] = React.useState(0);
   const ref = useRef<any>(null);
-  const {scrollYProgress} = useScroll({
-      container: ref,
+  const { scrollYProgress } = useScroll({
+    container: ref,
     offset: ["start end", "end end"],
   });
 
@@ -59,7 +53,7 @@ const content = [
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
 
     // const cardsBreakpoints = content.map((_, index) => index / cardLength);
-    const cardsBreakpoints = [0.5,0.8,0.81,1];
+    const cardsBreakpoints = [0.5, 0.8, 0.81, 1];
     const closestBreakpointIndex = cardsBreakpoints.reduce(
       (acc, breakpoint, index) => {
         const distance = Math.abs(latest - breakpoint);
@@ -89,18 +83,18 @@ const content = [
 
   useEffect(() => {
     setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
-  }, [activeCard,linearGradients]);
+  }, [activeCard, linearGradients]);
 
   return (
     <motion.main ref={ref} className="   h-screen overflow-y-auto   relative flex-col    "
-      style={{scrollbarWidth: "none"}}
+      style={{ scrollbarWidth: "none" }}
     >
       <section className="flex overflow-hidden">
-      <Hero />
+        <Hero />
       </section>
       <motion.section
-           animate={{backgroundColor: backgroundColors[activeCard % backgroundColors.length]}}
-        className="flex  gap-10">
+        animate={{ backgroundColor: backgroundColors[activeCard % backgroundColors.length] }}
+        className=" hidden md:flex   gap-10">
         <motion.div
           className=" pl-2  xl:pl-10 min-w-[50vw]  "
         >
@@ -134,8 +128,8 @@ const content = [
         </motion.div>
         <div
           className={cn(
-          "hidden lg:block sticky top-10 h-60 w-80 col-span-2  rounded-md   "
-          // contentClassName
+            "hidden lg:block sticky top-10 h-60 w-80 col-span-2  rounded-md   "
+            // contentClassName
           )}
         >
           {content[activeCard].content ?? null}

@@ -32,7 +32,7 @@ export function ButtonAceternity({
 	return (
 		<Component
 			className={cn(
-				"bg-transparent relative text-xl    overflow-hidden ",
+				"bg-transparent w-fit relative text-xl    overflow-hidden ",
 				containerClassName
 			)}
 			style={{
