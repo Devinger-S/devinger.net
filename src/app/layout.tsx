@@ -8,6 +8,7 @@ import NavBar from "./../components/Navbar.jsx";
 import { FloatingNav } from "@/components/floating-navbar";
 import { cn } from "@/lib/utils";
 import GrainyBackground from "@/components/grainyBackground/GrainyBackground";
+import { Grid } from "@/components/FeaturesSectionDemo";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,12 +26,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn("overflow-x-hidden flex flex-col min-h-screen relative", inter.className)}
       >
-      <GrainyBackground/>
+
         <Providers>
           <FloatingNav navItems={[
             { name: "Home", link: "/" },
             { name: "Media", link: "/media" },
-             { name: "Services", link: "/services" }
+            { name: "Services", link: "/services" }
           ]} />
           <main
             id="mainContent"

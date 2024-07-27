@@ -1,6 +1,7 @@
 
 "use client";
 import LottieAnimationWrapper from "@/components/LottieAnimationWrapper";
+
 import React, { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
@@ -10,10 +11,15 @@ import ImageWrapper from "@/components/ImageWrapper";
 import development from './../../public/development.json'
 import pictureUpload from './../../public/pictureUpload.json'
 import support from './../../public/support.json'
+import ShootingStars from "@/components/ShootingStars"
+import { StarsBackground } from "@/components/StarsBackground"
+import { FeaturesSectionDemo } from "@/components/FeaturesSectionDemo";
+import { useTheme } from "next-themes";
 
 
 
 export default function Home() {
+  const { theme, setTheme } = useTheme();
   const content = [
     {
       title: "What do I do?",
@@ -71,30 +77,23 @@ export default function Home() {
     "var(--black)",
     "var(--neutral-900)",
   ];
-  const linearGradients = [
-    "linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))",
-    "linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))",
-    "linear-gradient(to bottom right, var(--orange-500), var(--yellow-500))",
-  ];
 
-  const [backgroundGradient, setBackgroundGradient] = useState(
-    linearGradients[0]
-  );
 
-  useEffect(() => {
-    setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
-  }, [activeCard, linearGradients]);
 
   return (
     <motion.main ref={ref} className="   h-screen overflow-y-auto   relative flex-col    "
       style={{ scrollbarWidth: "none" }}
     >
-      <section className="flex overflow-hidden">
+      <section className="flex relative overflow-hidden">
         <Hero />
+      </section>
+      <section id='mobile' className="lg:hidden relative  dark:bg-black ">
+
+        <FeaturesSectionDemo content={content} />
       </section>
       <motion.section
         animate={{ backgroundColor: backgroundColors[activeCard % backgroundColors.length] }}
-        className=" hidden md:flex   gap-10">
+        className=" hidden lg:flex   gap-10">
         <motion.div
           className=" pl-2  xl:pl-10 min-w-[50vw]  "
         >

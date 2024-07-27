@@ -3,9 +3,9 @@
 import { useEffect, useRef } from 'react';
 import lottie from 'lottie-web';
 
-const LottieAnimationWrapper = ({source}) => {
+const LottieAnimationWrapper = ({ source }) => {
   const containerRef = useRef(null);
-// if (!source) {console.log("no source")}else{console.log(source)}
+  // if (!source) {console.log("no source")}else{console.log(source)}
   useEffect(() => {
     if (containerRef.current && source) {
       const animation = lottie.loadAnimation({
@@ -17,12 +17,12 @@ const LottieAnimationWrapper = ({source}) => {
         autoplay: true,
       });
       return () => {
-      animation.destroy(); // Stops and cleans up the animation
-    };
-      }
+        animation.destroy(); // Stops and cleans up the animation
+      };
+    }
   }, [source]);
 
-  return <div ref={containerRef} />;
+  return <div className='h-full absolute w-full' ref={containerRef} />;
 };
 
 export default LottieAnimationWrapper;

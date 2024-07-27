@@ -2,7 +2,7 @@
 import { usePathname } from 'next/navigation'
 import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
-import { DrawerDialog } from './../components/Drawer'
+// import { DrawerDialog } from './../components/Drawer'
 import {
   motion,
   AnimatePresence,
@@ -90,9 +90,6 @@ export const FloatingNav = ({
               >{navItem.name}</span>
             </Link>
           ))}
-          <DrawerDialog>
-            <Button >Contact</Button>
-          </DrawerDialog>
           {/* </Button> */}
           <span><ThemeToggle /></span>
         </motion.div>
