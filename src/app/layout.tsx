@@ -31,7 +31,7 @@ export default function RootLayout({
           <FloatingNav navItems={[
             { name: "Home", link: "/" },
             { name: "Media", link: "/media" },
-            { name: "Services", link: "/services" }
+            { name: "Projects", link: "/projects" },
           ]} />
           <main
             id="mainContent"

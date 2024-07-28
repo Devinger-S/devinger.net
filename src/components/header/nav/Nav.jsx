@@ -6,6 +6,8 @@ import { menuSlide } from '@/components/header/anim';
 import Link from '@/components/header/nav/link/Link';
 import Curve from '@/components/header/nav/curve/Curve'
 import { ThemeToggle } from '@/components/Theme-Toggle';
+import Footer from '@/components/Footer';
+import SocialIcons from '@/components/SocialIcons';
 
 const navItems = [
   {
@@ -13,16 +15,12 @@ const navItems = [
     href: "/",
   },
   {
+    title: "Media",
+    href: "/media",
+  },
+  {
     title: "Projects",
     href: "/projects",
-  },
-  {
-    title: "About",
-    href: "/about",
-  },
-  {
-    title: "Contact",
-    href: "/contact",
   },
 ]
 
@@ -45,7 +43,7 @@ export default function Nav() {
             })
           }
         </div>
-        {/* <Footer /> */}
+        <SocialIcons />
       </div>
       <Curve />
     </motion.div>

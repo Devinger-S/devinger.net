@@ -8,57 +8,99 @@ export default function MediaPage() {
   const cards = [
     {
       id: 1,
-      content: <SkeletonOne />,
-      className: "md:col-span-2 min-h-[500px] ",
+      // content: <SkeletonOne />,
+      className: "md:col-span-1 min-h-[500px]",
       thumbnail:
-        "/DSC03310.jpg",
-
+        "/mediaPhoto/za.jpg",
     },
     {
       id: 2,
-      content: <SkeletonTwo />,
-      className: "col-span-1 min-h-[500px]",
+      // content: <SkeletonOne />,
+      className: "md:col-span-1 min-h-[500px]",
       thumbnail:
-        "/hero.png",
+        "/mediaPhoto/vertig.jpg",
     },
     {
       id: 3,
-      content: <SkeletonThree />,
+      // content: <SkeletonThree />,
       className: "col-span-1 min-h-[500px]",
       thumbnail:
-        "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "/mediaPhoto/DSC03310.jpg",
     },
     {
       id: 4,
-      content: <SkeletonFour />,
-      className: "md:col-span-2 min-h-[500px]",
+      // content: <SkeletonOne />,
+      className: "md:col-span-1 min-h-[500px]",
       thumbnail:
-        "https://images.unsplash.com/photo-1475070929565-c985b496cb9f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "/mediaPhoto/IMG_3632.jpg",
     },
     {
       id: 5,
-      content: <SkeletonOne />,
-      className: "md:col-span-2 min-h-[500px]",
+      // content: <SkeletonOne />,
+      className: "md:col-span-1 min-h-[500px]",
       thumbnail:
-        "https://images.unsplash.com/photo-1476231682828-37e571bc172f?q=80&w=3474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "/mediaPhoto/IMG_3736.jpg",
     },
     {
       id: 6,
-      content: <SkeletonTwo />,
-      className: "col-span-1 min-h-[500px]",
+      // content: <SkeletonOne />,
+      className: "md:col-span-1 min-h-[500px]",
       thumbnail:
-        "https://images.unsplash.com/photo-1464457312035-3d7d0e0c058e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "/mediaPhoto/IMG_4615.jpg",
     },
     {
       id: 7,
-      content: <SkeletonTwo />,
-      className: "col-span-1 min-h-[500px]",
+      // content: <SkeletonOne />,
+      className: "md:col-span-1 min-h-[500px]",
       thumbnail:
-        "https://images.unsplash.com/photo-1464457312035-3d7d0e0c058e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "/mediaPhoto/IMG_4619.jpg",
     },
+    {
+      id: 8,
+      // content: <SkeletonOne />,
+      className: "md:col-span-1 min-h-[500px]",
+      thumbnail:
+        "/mediaPhoto/IMG_4622.jpg",
+    },
+    {
+      id: 9,
+      // content: <SkeletonOne />,
+      className: "md:col-span-1 min-h-[500px]",
+      thumbnail:
+        "/mediaPhoto/IMG_4624.jpg",
+    },
+    {
+      id: 10,
+      // content: <SkeletonOne />,
+      className: "md:col-span-1 min-h-[500px]",
+      thumbnail:
+        "/mediaPhoto/IMG_4625.jpg",
+    },
+    {
+      id: 11,
+      // content: <SkeletonOne />,
+      className: "md:col-span-1 min-h-[500px]",
+      thumbnail:
+        "/mediaPhoto/IMG_4626.jpg",
+    },
+    {
+      id: 12,
+      // content: <SkeletonOne />,
+      className: "md:col-span-1 min-h-[500px]",
+      thumbnail:
+        "/mediaPhoto/IMG_4629.jpg",
+    },
+    {
+      id: 13,
+      // content: <SkeletonOne />,
+      className: "md:col-span-1 min-h-[500px]",
+      thumbnail:
+        "/mediaPhoto/IMG_4630.jpg",
+    },
+
   ];
   return (
-    <section id="media" className=" bg-black ">
+    <section id="media" className="py-20">
       <LayoutGrid cards={cards} />
     </section>
   )
@@ -115,48 +157,3 @@ const SkeletonFour = () => {
   );
 };
 
-const cards = [
-  {
-    id: 1,
-    content: <SkeletonOne />,
-    className: "md:col-span-2 min-h-[500px] ",
-    thumbnail:
-      "/DSC03310.jpg",
-
-  },
-  {
-    id: 2,
-    content: <SkeletonTwo />,
-    className: "col-span-1 min-h-[500px]",
-    thumbnail:
-      "/hero.png",
-  },
-  {
-    id: 3,
-    content: <SkeletonThree />,
-    className: "col-span-1 min-h-[500px]",
-    thumbnail:
-      "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    id: 4,
-    content: <SkeletonFour />,
-    className: "md:col-span-2 min-h-[500px]",
-    thumbnail:
-      "https://images.unsplash.com/photo-1475070929565-c985b496cb9f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    id: 5,
-    content: <SkeletonOne />,
-    className: "md:col-span-2 min-h-[500px]",
-    thumbnail:
-      "https://images.unsplash.com/photo-1476231682828-37e571bc172f?q=80&w=3474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    id: 6,
-    content: <SkeletonTwo />,
-    className: "col-span-1 min-h-[500px]",
-    thumbnail:
-      "https://images.unsplash.com/photo-1464457312035-3d7d0e0c058e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-];

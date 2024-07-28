@@ -24,11 +24,11 @@ export const Star: React.FC<StarProps> = ({
   opacity,
   twinkleSpeed,
 }) => (
-  <circle cx={x} cy={y} r={radius} fill="white" opacity={opacity}>
+  <circle cx={x} cy={y} r={radius} fill="currentColor" opacity={opacity}>
     {twinkleSpeed !== null && (
       <animate
         attributeName="opacity"
-        values={`${opacity};${opacity * 0.3};${opacity}`}
+        values={`${opacity};${opacity * 0.6};${opacity}`}
         dur={`${twinkleSpeed}s`}
         repeatCount="indefinite"
       />
@@ -66,7 +66,7 @@ export const StarsBackground: React.FC<StarsBackgroundProps> = ({
         return {
           x: Math.random() * width,
           y: Math.random() * height,
-          radius: Math.random() * 0.05 + 0.5,
+          radius: Math.random() * 2 + 0.5,
           opacity: Math.random() * 0.5 + 0.5,
           twinkleSpeed: shouldTwinkle
             ? minTwinkleSpeed +
@@ -85,9 +85,10 @@ export const StarsBackground: React.FC<StarsBackgroundProps> = ({
   );
 
   useEffect(() => {
+    const ref = containerRef.current;
     const updateStars = () => {
-      if (containerRef.current) {
-        const { width, height } = containerRef.current.getBoundingClientRect();
+      if (ref) {
+        const { width, height } = ref.getBoundingClientRect();
         setStars(generateStars(width, height));
       }
     };
@@ -95,13 +96,13 @@ export const StarsBackground: React.FC<StarsBackgroundProps> = ({
     updateStars();
 
     const resizeObserver = new ResizeObserver(updateStars);
-    if (containerRef.current) {
-      resizeObserver.observe(containerRef.current);
+    if (ref) {
+      resizeObserver.observe(ref);
     }
 
     return () => {
-      if (containerRef.current) {
-        resizeObserver.unobserve(containerRef.current);
+      if (ref) {
+        resizeObserver.unobserve(ref);
       }
     };
   }, [

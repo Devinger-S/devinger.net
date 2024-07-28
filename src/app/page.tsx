@@ -15,6 +15,7 @@ import ShootingStars from "@/components/ShootingStars"
 import { StarsBackground } from "@/components/StarsBackground"
 import { FeaturesSectionDemo } from "@/components/FeaturesSectionDemo";
 import { useTheme } from "next-themes";
+import ContactSection from "@/components/ContactSection";
 
 
 
@@ -22,22 +23,16 @@ export default function Home() {
   const { theme, setTheme } = useTheme();
   const content = [
     {
-      title: "What do I do?",
-      description:
-        "I help businesses and creatives overcome digital invisibility so they can achieve a captivating online presence by crafting stunning websites and visuals. Because there's power in being seen.",
-      content: <ImageWrapper />
-    },
-    {
       title: "Building Your Online Space",
       description:
-        "I create websites with a personal touch, using technologies like Next.js for dynamic web apps or WordPress for flexible solutions. Whether you need a sleek site or a fully custom experience, I’m here to bring your vision to life.",
+        " Building beautiful, responsive websites using WordPress, Next.js, and React.js. Whether you need a simple landing page or a dynamic web app, I’m here to bring your ideas to life. Let's create something that not only looks great but works seamlessly across all devices. Ready to stand out online?",
       content:
         <LottieAnimationWrapper source={development} />
     },
     {
-      title: "Adding professional photos & videos",
+      title: "Adding visuals",
       description:
-        "I bring your brand to life with high-quality photos and videos that make a lasting impression. Whether it’s capturing stunning product shots or creating engaging video content, I ensure every visual element enhances your website and tells your story beautifully.",
+        "Great visuals make a world of difference. I specialize in product and lifestyle photography, tailored to elevate your brand. From eye-catching product shots to engaging lifestyle imagery, I’ll help tell your story through stunning visuals. Let's make your brand shine with photos that speak volumes.",
       content:
         <LottieAnimationWrapper source={pictureUpload} />
     },
@@ -46,6 +41,11 @@ export default function Home() {
       description:
         "My commitment doesn’t end with the launch. I’m here for you every step of the way, offering ongoing support and maintenance to keep your website running smoothly. From resolving technical issues to making updates as needed, I ensure your online presence remains strong and effective.",
       content: <LottieAnimationWrapper source={support} />
+    },
+    {
+      title: "Job Opportunities",
+      description: <ContactSection />,
+      content: ''
     },
   ];
   const [activeCard, setActiveCard] = React.useState(0);
@@ -84,19 +84,20 @@ export default function Home() {
     <motion.main ref={ref} className="   h-screen overflow-y-auto   relative flex-col    "
       style={{ scrollbarWidth: "none" }}
     >
-      <section className="flex relative overflow-hidden">
+      <section className="flex  sticky top-0 justify-center items-center  h-screen">
         <Hero />
       </section>
-      <section id='mobile' className="lg:hidden relative  dark:bg-black ">
+      <section id='mobile' className="lg:hidden relative  bg-background ">
 
         <FeaturesSectionDemo content={content} />
       </section>
       <motion.section
-        animate={{ backgroundColor: backgroundColors[activeCard % backgroundColors.length] }}
-        className=" hidden lg:flex   gap-10">
+        // animate={{ backgroundColor: backgroundColors[activeCard % backgroundColors.length] }}
+        className=" hidden lg:flex relative z-20    bg-background    gap-10">
         <motion.div
           className=" pl-2  xl:pl-10 min-w-[50vw]  "
         >
+
           {content.map((item, index) => (
             <div key={item.title + index} className="my-10 mb-20">
               <motion.h2
@@ -104,9 +105,9 @@ export default function Home() {
                   opacity: 0,
                 }}
                 animate={{
-                  opacity: activeCard === index ? 1 : 0.3,
+                  opacity: activeCard === index ? 1 : 0.5,
                 }}
-                className="text-2xl font-bold text-slate-100"
+                className="text-xl font-bold "
               >
                 {item.title}
               </motion.h2>
@@ -117,7 +118,7 @@ export default function Home() {
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-xl text-slate-300 max-w-sm mt-10"
+                className="text-xl max-w-sm mt-10"
               >
                 {item.description}
               </motion.p>
@@ -131,7 +132,7 @@ export default function Home() {
             // contentClassName
           )}
         >
-          {content[activeCard].content ?? null}
+          {content[activeCard] ? content[activeCard].content : ''}
         </div>
       </motion.section>
 

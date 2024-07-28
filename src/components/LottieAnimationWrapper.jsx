@@ -22,7 +22,7 @@ const LottieAnimationWrapper = ({ source }) => {
     }
   }, [source]);
 
-  return <div className='h-full absolute w-full' ref={containerRef} />;
+  return <div className='' ref={containerRef} />;
 };
 
 export default LottieAnimationWrapper;

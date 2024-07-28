@@ -4,10 +4,8 @@ import { useEffect, useState } from 'react';
 import Nav from '@/components/header/nav/Nav';
 import { AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
-import Image from 'next/image';
 
 export default function Header() {
-
 
 
   const [isActive, setIsActive] = useState(false);
@@ -24,7 +22,6 @@ export default function Header() {
   return (
     <>
       <div className={styles.main}>
-
         <div className={styles.header}>
           <div
             onClick={toggleIsActive}
@@ -40,9 +37,11 @@ export default function Header() {
       >
 
         <AnimatePresence mode="wait">
-          {isActive &&
-            <Nav
-            />}
+          <>
+            {isActive &&
+              <Nav
+              />}
+          </>
         </AnimatePresence>
       </div>
     </>

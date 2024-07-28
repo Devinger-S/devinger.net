@@ -1,8 +1,9 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { cn } from  "@/lib/utils";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
+import useScreenSize from "@/lib/useScreenSize";
 
 type Card = {
   id: number;
@@ -24,25 +25,26 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
     setLastSelected(selected);
     setSelected(null);
   };
+  const { breakpoint, width } = useScreenSize();
 
   return (
-    <div className="w-full  h-full  grid grid-cols-1 md:grid-cols-3  max-w-7xl mx-auto gap-4 ">
+    <div className="w-full  h-full  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  max-w-7xl mx-auto gap-4 ">
       {cards.map((card, i) => (
         <div key={i} className={cn(card.className, "")}>
           <motion.div
-            onClick={() => handleClick(card)}
+            // onClick={() => handleClick(card)}
             className={cn(
               card.className,
               "relative overflow-hidden",
               selected?.id === card.id
-                ? "rounded-lg cursor-pointer fixed inset-0 h-1/2 w-full md:w-1/2 m-auto z-50 flex justify-center items-center flex-wrap flex-col"
+                ? "rounded-lg cursor-pointer fixed inset-0 h-[80vh] w-full md:w-[80vw] m-auto z-50 flex justify-center items-center flex-wrap flex-col "
                 : lastSelected?.id === card.id
-                ? "z-40 bg-white rounded-xl h-full w-full"
-                : "bg-white rounded-xl h-full w-full"
+                  ? "z-40  rounded-xl h-full w-full"
+                  : " rounded-xl h-full w-full"
             )}
             layout
           >
-            {selected?.id === card.id && <SelectedCard selected={selected} />}
+            {selected?.id === card.id && width > 768 && <SelectedCard selected={selected} />}
             <BlurImage card={card} />
           </motion.div>
         </div>
@@ -50,11 +52,11 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
       <motion.div
         onClick={handleOutsideClick}
         className={cn(
-          "fixed h-full w-screen backdrop-blur-xl left-0 top-0 bg-black opacity-0 z-10",
+          "fixed h-full w-screen backdrop-blur-xl left-0 top-0 bg-black opacity-50 z-10",
 
           selected?.id ? "pointer-events-auto" : "pointer-events-none"
         )}
-        animate={{ opacity: selected?.id ? 0.3 : 0 }}
+        animate={{ opacity: selected?.id ? 0.5 : 0 }}
       />
     </div>
   );
@@ -69,7 +71,7 @@ const BlurImage = ({ card }: { card: Card }) => {
       width="500"
       onLoad={() => setLoaded(true)}
       className={cn(
-        "object-cover object-top absolute inset-0 h-full w-full transition duration-200",
+        "object-contain  absolute inset-0 h-full w-full transition duration-200",
         loaded ? "blur-none" : "blur-md"
       )}
       alt="thumbnail"
@@ -85,9 +87,9 @@ const SelectedCard = ({ selected }: { selected: Card | null }) => {
           opacity: 0,
         }}
         animate={{
-          opacity: 0.6,
+          opacity: 0,
         }}
-        className="absolute inset-0 h-full w-full bg-black opacity-60 z-10"
+        className="absolute inset-0 h-full w-full bg-background opacity-90 z-10"
       />
       <motion.div
         initial={{

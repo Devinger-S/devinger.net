@@ -8,10 +8,10 @@ const RainbowHighlight = ({ color, children }: { color: string, children: any })
   return (
     <RoughNotation
       type="highlight"
-      multiline={true}
-      padding={[0, 2]}
+      // multiline={true}
+      // padding={[2, 2]}
       iterations={1}
-      brackets={['top', 'bottom']}
+      // brackets={['top', 'bottom']}
       animationDuration={1500}
       color={color}
     >
