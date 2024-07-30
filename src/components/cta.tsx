@@ -9,7 +9,8 @@ export default function CallToAction() {
 
   // const CallToAction = () => {
   return (
-    <div id='cta' className="flex  flex-row items-center  max-w-screen py-4  gap-2 md:flex-row md:gap-8">
+    <div id='cta' className="flex  flex-row items-center mt-10 relative z-10 max-w-screen py-4  gap-2 md:flex-row md:gap-8">
+
 
       <Link
         className={cn('font-bold  text-center w-fit text-lg p-4',

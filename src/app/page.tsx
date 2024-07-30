@@ -2,17 +2,14 @@
 "use client";
 import LottieAnimationWrapper from "@/components/LottieAnimationWrapper";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Hero from "./../components/Hero";
-import ImageWrapper from "@/components/ImageWrapper";
 import development from './../../public/development.json'
 import pictureUpload from './../../public/pictureUpload.json'
 import support from './../../public/support.json'
-import ShootingStars from "@/components/ShootingStars"
-import { StarsBackground } from "@/components/StarsBackground"
 import { FeaturesSectionDemo } from "@/components/FeaturesSectionDemo";
 import { useTheme } from "next-themes";
 import ContactSection from "@/components/ContactSection";

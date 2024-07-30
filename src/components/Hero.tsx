@@ -10,7 +10,8 @@ export default function Hero() {
     "#8aadf4",];
   return (
     // <div id="hero" className="">
-    <div className=" " id="wrapper">
+    <div className=" pl-4 " id="wrapper">
+
       <StarsBackground />
       <RoughNotationGroup show={true}>
         <div className="flex text-background  w-fit  mb-8 flex-col sm:text-[4em] font-bold   text-[2em] xl:flex-row  ">
@@ -23,14 +24,14 @@ export default function Hero() {
             Developer.
           </RainbowHighlight>
           <RainbowHighlight color={colors[1]}>
-            Visual Creator.
+            Photographer
           </RainbowHighlight>
         </div>
         <RoughNotation
           strokeWidth={8}
-          padding={10}
+          padding={[0, 0, 5, 0]}
           iterations={2}
-          brackets={['top', 'bottom']}
+          // brackets={['top', 'bottom']}
           animationDuration={1500}
           multiline={true}
           color={colors[1]}
