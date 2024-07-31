@@ -30,7 +30,21 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   return (
     <div className="w-full  h-full  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  max-w-7xl mx-auto gap-4 ">
       {cards.map((card, i) => (
-        <div key={i} className={cn(card.className, "")}>
+        <motion.div
+
+          key={i}
+          initial={{
+            opacity: 0,
+            y: -50,
+            rotate: 0,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            rotate: i % 2 === 0 ? 3 : -3,
+          }}
+          transition={{ duration: 0.2, delay: i * 0.1 }}
+          className={cn(card.className, "image-wrapper")}>
           <motion.div
             // onClick={() => handleClick(card)}
             className={cn(
@@ -47,7 +61,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
             {selected?.id === card.id && width > 768 && <SelectedCard selected={selected} />}
             <BlurImage card={card} />
           </motion.div>
-        </div>
+        </motion.div>
       ))}
       <motion.div
         onClick={handleOutsideClick}
