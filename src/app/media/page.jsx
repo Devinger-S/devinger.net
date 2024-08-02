@@ -41,62 +41,6 @@ export default function MediaPage() {
       thumbnail:
         "/mediaPhoto/IMG_3736.jpg",
     },
-    {
-      id: 6,
-      // content: <SkeletonOne />,
-      className: "md:col-span-1 min-h-[500px]",
-      thumbnail:
-        "/mediaPhoto/IMG_4615.jpg",
-    },
-    {
-      id: 7,
-      // content: <SkeletonOne />,
-      className: "md:col-span-1 min-h-[500px]",
-      thumbnail:
-        "/mediaPhoto/IMG_4619.jpg",
-    },
-    {
-      id: 8,
-      // content: <SkeletonOne />,
-      className: "md:col-span-1 min-h-[500px]",
-      thumbnail:
-        "/mediaPhoto/IMG_4622.jpg",
-    },
-    {
-      id: 9,
-      // content: <SkeletonOne />,
-      className: "md:col-span-1 min-h-[500px]",
-      thumbnail:
-        "/mediaPhoto/IMG_4624.jpg",
-    },
-    {
-      id: 10,
-      // content: <SkeletonOne />,
-      className: "md:col-span-1 min-h-[500px]",
-      thumbnail:
-        "/mediaPhoto/IMG_4625.jpg",
-    },
-    {
-      id: 11,
-      // content: <SkeletonOne />,
-      className: "md:col-span-1 min-h-[500px]",
-      thumbnail:
-        "/mediaPhoto/IMG_4626.jpg",
-    },
-    {
-      id: 12,
-      // content: <SkeletonOne />,
-      className: "md:col-span-1 min-h-[500px]",
-      thumbnail:
-        "/mediaPhoto/IMG_4629.jpg",
-    },
-    {
-      id: 13,
-      // content: <SkeletonOne />,
-      className: "md:col-span-1 min-h-[500px]",
-      thumbnail:
-        "/mediaPhoto/IMG_4630.jpg",
-    },
 
   ];
   return (
