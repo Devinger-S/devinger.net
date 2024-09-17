@@ -4,10 +4,12 @@
 
   @layer base {
     :root {
-      --background:227deg, 23%, 95%;
+      /* --background:227deg, 23%, 95%; */
+      --background:237deg, 16%, 23%;
       --accent: 220 83% 75%;
       --background2: 183 74% 35%;
-      --foreground:234deg, 16%, 35% ;
+      /* --foreground:234deg, 16%, 35% ; */
+      --foreground:226deg, 64%, 88% ;
       /* 227deg, 70%, 87%; */
       --card: 0 0% 100%;
       --card-foreground: 240 10% 3.9%;
@@ -41,7 +43,9 @@
 
       --backgroundMantle: 240 21% 12%; /* mantle catppuccin meaning second layer. */
       --background-crust: 240 23% 9%; /* mantle catppuccin meaning second layer. */
-      --foreground: 227 68% 88%;
+      /* --foreground: 227 68% 88%; */
+
+      --foreground:226deg, 64%, 88% ;
       --accent: 220 83% 75%;
 
       --card: 240 10% 3.9%;

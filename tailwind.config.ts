@@ -81,14 +81,7 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        aurora: {
-          from: {
-            backgroundPosition: "50% 50%, 50% 50%",
-          },
-          to: {
-            backgroundPosition: "350% 50%, 350% 50%",
-          },
-        },
+        
         blob: {
           "0%": {
             transform: "translate(0px, 0px) ",
@@ -112,8 +105,13 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        move: {
+          "0%": { transform: "translateX(-10px)" },
+          "100%": { transform: "translateX(300px)" },
+        },
       },
       animation: {
+         move: "move 5s linear infinite",
         aurora: "aurora 60s linear infinite",
         border: "border 7s infinite",
         "accordion-down": "accordion-down 0.2s ease-out",

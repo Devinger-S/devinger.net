@@ -1,7 +1,6 @@
-
-'use client'
-import { useEffect, useRef } from 'react';
-import lottie from 'lottie-web';
+"use client";
+import { useEffect, useRef } from "react";
+import lottie from "lottie-web";
 
 const LottieAnimationWrapper = ({ source }) => {
   const containerRef = useRef(null);
@@ -12,7 +11,7 @@ const LottieAnimationWrapper = ({ source }) => {
         container: containerRef.current,
         animationData: source,
         // source, // Your animation data
-        renderer: 'svg', // Optional: 'svg', 'canvas', 'html' to set the renderer
+        renderer: "svg", // Optional: 'svg', 'canvas', 'html' to set the renderer
         loop: false,
         autoplay: true,
       });
@@ -22,7 +21,7 @@ const LottieAnimationWrapper = ({ source }) => {
     }
   }, [source]);
 
-  return <div className='' ref={containerRef} />;
+  return <div className="h-full w-full" ref={containerRef} />;
 };
 
 export default LottieAnimationWrapper;

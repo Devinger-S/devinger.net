@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { LayoutGrid } from "/src/components/LayoutGrid";
 
+
 export default function MediaPage() {
 
   const cards = [

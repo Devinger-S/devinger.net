@@ -1,30 +1,28 @@
-
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import RainbowHighlight from "./RainbowHighlights";
-import CallToAction from "@/components/cta";
-import { StarsBackground } from "./StarsBackground";
 
 export default function Hero() {
-  const colors = [
-    "#7dc4e4",
-    "#8aadf4",];
+  const colors = ["#f38ba8", "#f9e2af", "#a6e3a1"];
   return (
     // <div id="hero" className="">
-    <div className=" pl-4 " id="wrapper">
-
-      <StarsBackground />
+    <div
+      className="  max-w-4xl mx-auto h-screen z-10 text-background mt-16 md:mt-36    "
+      id="wrapper"
+    >
+      {/* <StarsBackground /> */}
       <RoughNotationGroup show={true}>
-        <div className="flex text-background  w-fit  mb-8 flex-col sm:text-[4em] font-bold   text-[2em] xl:flex-row  ">
-
-
+        <div className="flex  gap-2    w-fit  mb-8 flex-col sm:text-[4em] font-bold   text-[3em] sm:flex-row  ">
           <RainbowHighlight
             // animationDuration={3500}
             color={colors[0]}
           >
-            Developer.
+            <span className="px-4">Build </span>
           </RainbowHighlight>
           <RainbowHighlight color={colors[1]}>
-            Photographer
+            <span className="px-4">Protect </span>
+          </RainbowHighlight>
+          <RainbowHighlight color={colors[2]}>
+            <span className="px-4">Maintain </span>
           </RainbowHighlight>
         </div>
         <RoughNotation
@@ -34,16 +32,14 @@ export default function Hero() {
           // brackets={['top', 'bottom']}
           animationDuration={1500}
           multiline={true}
-          color={colors[1]}
+          color={colors[2]}
           type="underline"
         >
-          <span className='font-sans  font-bold text-wrap bg-clip-text text-lg '
-          >
-
-            Helping people stand out whit eye-catching websites and visuals
+          <span className="font-sans text-foreground    font-bold text-wrap bg-clip-text text-lg sm:text-2xl ">
+            Web apps that work—and stay secure.
           </span>
         </RoughNotation>
-        <CallToAction />
+        {/* <CallToAction />  */}
       </RoughNotationGroup>
     </div>
     //</div>

@@ -1,5 +1,13 @@
 import React from "react";
 import { useId } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
 
 type ContentItem = {
   title: string;
@@ -10,101 +18,59 @@ type ContentItem = {
 type ContentProps = ContentItem[];
 
 export function FeaturesSectionDemo({ content }: { content: ContentProps }) {
+  const [build, protect, maintain, contact] = content;
   return (
-    <div className="py-20 lg:py-40">
-      {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 md:gap-2 max-w-7xl mx-auto"> */}
-      <div className="grid grid-cols-1 gap-10 md:gap-2 max-w-7xl mx-auto">
-        {content.map((item) => (
-          <div
-            key={item.title}
-            className="relative bg-gradient-to-b dark:from-neutral-900 from-neutral-100 dark:to-neutral-950 to-white p-6 rounded-3xl overflow-hidden"
-          >
-            <Grid size={20} />
-            <p className="text-base font-bold   relative z-20">
-              {/* {item.title} */}
-            </p>
-            <div className="">
+    <div className="grid grid-cols-1 text-xl  gap-10 md:gap-4  mx-auto sm:px-8 ">
+      <Card
+        className="relative sm:w-[90vw] text-foreground mx-auto  bg-gradient-to-t  from-[rgba(38,38,38,0)_0%]
+              via-[rgba(38,38,38,1)_20%] to-[rgba(38,38,38,1)_100%]  p-6 rounded-3xl overflow-hidden"
+      >
+        <CardTitle className="pl-0">{build.title}</CardTitle>
+        <CardHeader className=" flex p-0 sm:p-6 flex-col items-center sm:flex-row ">
+          <span className="">{build.description}</span>
+          <span className="grow">{build.content}</span>
+        </CardHeader>
 
-              {item.content ?? null}
-            </div>
-            <p className="   mt-4 text-base font-normal relative z-20">
-              {item.description}
-            </p>
-          </div>
-        ))}
-      </div>
+        <CardFooter id="footer"> {/* <AnimatedTools />{" "} */}</CardFooter>
+      </Card>
+
+      <Card
+        className="relative mx-auto  sm:w-[90vw] text-foreground   bg-gradient-to-t  from-transparent/30
+              to-neutral-900 p-6 rounded-3xl overflow-hidden"
+      >
+        <CardTitle className="p-6">{protect.title}</CardTitle>
+        <CardHeader className=" flex flex-col items-center sm:flex-row ">
+          <span className="">{protect.description}</span>
+          <span className="grow">{protect.content}</span>
+        </CardHeader>
+
+        <CardFooter id="footer">{/* <AnimatedTools /> */}</CardFooter>
+      </Card>
+
+      <Card
+        className="relative mx-auto  sm:w-[90vw] text-foreground  bg-gradient-to-t  from-neutral-600
+              to-neutral-900 p-6 rounded-3xl overflow-hidden"
+      >
+        <CardTitle className="p-6">{maintain.title}</CardTitle>
+        <CardHeader className=" flex flex-col items-center sm:flex-row ">
+          <span className="">{maintain.description}</span>
+          <span className="grow">{maintain.content}</span>
+        </CardHeader>
+
+        <CardFooter id="footer">{/* <AnimatedTools /> */}</CardFooter>
+      </Card>
+      <Card
+        className="relative mx-auto sm:w-[90vw] text-foreground  bg-gradient-to-t  from-neutral-600
+              to-neutral-900 p-6 rounded-3xl overflow-hidden"
+      >
+        <CardTitle>{contact.title}</CardTitle>
+        <CardHeader className=" flex flex-col items-center sm:flex-row ">
+          <span className="">{contact.description}</span>
+          <span className="grow">{contact.content}</span>
+        </CardHeader>
+
+        <CardFooter id="footer">{/* <AnimatedTools /> */}</CardFooter>
+      </Card>
     </div>
-  );
-}
-
-
-export const Grid = ({
-  pattern,
-  size,
-}: {
-  pattern?: number[][];
-  size?: number;
-}) => {
-  const p = pattern ?? [
-    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
-    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
-    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
-    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
-    [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
-  ];
-  return (
-    <div className="pointer-events-none absolute left-1/2 top-0  -ml-20 -mt-2 h-full w-full [mask-image:linear-gradient(white,transparent)]">
-      <div className="absolute inset-0 bg-gradient-to-r  [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] dark:from-zinc-900/30 from-zinc-100/30 to-zinc-300/30 dark:to-zinc-900/30 opacity-100">
-        <GridPattern
-          width={size ?? 20}
-          height={size ?? 20}
-          x="-12"
-          y="4"
-          squares={p}
-          className="absolute inset-0 h-full w-full  mix-blend-overlay dark:fill-white/10 dark:stroke-white/10 stroke-black/10 fill-black/10"
-        />
-      </div>
-    </div>
-  );
-};
-
-export function GridPattern({ width, height, x, y, squares, ...props }: any) {
-  const patternId = useId();
-
-  return (
-    <svg aria-hidden="true" {...props}>
-      <defs>
-        <pattern
-          id={patternId}
-          width={width}
-          height={height}
-          patternUnits="userSpaceOnUse"
-          x={x}
-          y={y}
-        >
-          <path d={`M.5 ${height}V.5H${width}`} fill="none" />
-        </pattern>
-      </defs>
-      <rect
-        width="100%"
-        height="100%"
-        strokeWidth={0}
-        fill={`url(#${patternId})`}
-      />
-      {squares && (
-        <svg x={x} y={y} className="overflow-visible">
-          {squares.map(([x, y]: any) => (
-            <rect
-              strokeWidth="0"
-              key={`${x}-${y}`}
-              width={width + 1}
-              height={height + 1}
-              x={x * width}
-              y={y * height}
-            />
-          ))}
-        </svg>
-      )}
-    </svg>
   );
 }
